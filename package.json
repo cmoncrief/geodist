@@ -1,0 +1,29 @@
+{
+  "name": "geodist",
+  "version": "0.1.0",
+  "author": "Charles Moncrief <cmoncrief@gmail.com>",
+  "description": "Simple geographic distance calculator",
+  "main": "lib/geodist.js",
+  "scripts": {
+    "prepublish" : "cake build",
+    "test": "cake test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmoncrief/geodist.git" 
+  },
+  "keywords": [
+    "distance",
+    "geo",
+    "haversine",
+    "coordinates",
+    "mileage"
+  ],
+  "author": "Charles Moncrief",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.7.4",
+    "coffee-script": "~1.4.0"
+  },
+  "engines": { "node" : "*"}
+}
