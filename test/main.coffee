@@ -19,6 +19,16 @@ describe 'Distance', ->
     dist = geodist {lat: 48.8742, lon: 2.3470}, {lat: 52.5233, lon: 13.4127}
     assert.equal dist, 545
 
+describe 'Limits', ->
+
+  it 'should return false if the limit is exceeded', ->
+    dist = geodist {lat: 35.6833, lon: 139.7667}, {lat: 34.6603, lon: 135.5232}, {limit: 200}
+    assert.equal dist, false
+
+  it 'should return true if the limit is not exceeded', ->
+    dist = geodist {lat: 35.6833, lon: 139.7667}, {lat: 34.6603, lon: 135.5232}, {limit: 250}
+    assert.equal dist, true
+
 describe 'Units', ->
 
   it 'should calculate miles between Cordoba and Hamilton', ->

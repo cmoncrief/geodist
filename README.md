@@ -29,6 +29,7 @@ The following options are supported:
 * `unit`   - Return results in the unit of measurement. Defaults to miles, see below for available types.
 * `format` - Return results as a string with the measurement type. Defaults to false.
 * `exact`  - Return exact results as a floating point. Defaults to false.
+* `limit`  - Specify a maximum distance here and `true` will be returned if the distance is less, or `false` if it is exceeded.
 
 The following types are accepted in the `unit` option:
 
@@ -49,6 +50,20 @@ Examples:
     var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {format: true, unit: 'feet'})
     console.log(dist)           
     // => 3101650 feet
+
+    // Limit miles for Tokyo -> Osaka (249 miles)
+
+    tokyo = {lat: 35.6833, lon: 139.7667}    
+    osaka = {lat: 34.6603, lon: 135.5232} 
+
+    var dist = geodist(tokyo, osaka, {limit: 200})
+    console.log(dist)           
+    // => false 
+
+    var dist = geodist(tokyo, osaka, {limit: 250})
+    console.log(dist)           
+    // => true 
+
 
 ## Coordinate formats
 

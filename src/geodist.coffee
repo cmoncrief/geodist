@@ -36,6 +36,9 @@ getDistance = (start, end, options = {}) ->
   distance = earthRadius * c
   distance = Math.floor(distance) unless options.exact
 
+  if options.limit
+    if options.limit > distance then return true else return false
+
   distance = "#{distance} #{options.unit || 'miles'}" if options.format
 
   return distance
