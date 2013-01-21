@@ -41,29 +41,20 @@ The following types are accepted in the `unit` option:
 
 Examples:
 
-    var geodist = require('./lib/geodist')
+    var geodist = require('geodist')
 
-    var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {exact: true, unit: 'km'})
-    console.log(dist)           
-    // => 945.0861704953323
+    var tokyo = {lat: 35.6833, lon: 139.7667}    
+    var osaka = {lat: 34.6603, lon: 135.5232}
 
-    var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {format: true, unit: 'feet'})
-    console.log(dist)           
-    // => 3101650 feet
+    geodist(tokyo, osaka)                                // => 249
 
-    // Limit miles for Tokyo -> Osaka (249 miles)
+    geodist(tokyo, osaka, {exact: true, unit: 'km'})     // => 402.09212137829695
 
-    tokyo = {lat: 35.6833, lon: 139.7667}    
-    osaka = {lat: 34.6603, lon: 135.5232} 
+    geodist(tokyo, osaka, {format: true, unit: 'feet'})  // => 1319614 feet
+ 
+    geodist(tokyo, osaka, {limit: 200})                  // => false 
 
-    var dist = geodist(tokyo, osaka, {limit: 200})
-    console.log(dist)           
-    // => false 
-
-    var dist = geodist(tokyo, osaka, {limit: 250})
-    console.log(dist)           
-    // => true 
-
+    geodist(tokyo, osaka, {limit: 250})                  // => true 
 
 ## Coordinate formats
 
