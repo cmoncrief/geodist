@@ -17,7 +17,8 @@ format.
     var geodist = require('geodist')
 
     var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881})
-    console.log(dist)
+    console.log(dist)           
+    // => 587
 
 ## Usage
 
@@ -25,16 +26,29 @@ format.
 
 The following options are supported:
 
-* `metric` - Return results in kilometers. Defaults to false.
+* `unit`   - Return results in the unit of measurement. Defaults to miles, see below for available types.
 * `format` - Return results as a string with the measurement type. Defaults to false.
 * `exact`  - Return exact results as a floating point. Defaults to false.
 
-This example will return the exact distance in kilometers:
+The following types are accepted in the `unit` option:
+
+* `miles` or `mi`
+* `yards`
+* `feet`
+* `kilometers` or `km`
+* `meters`
+
+Examples:
 
     var geodist = require('./lib/geodist')
 
-    var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {exact: true, metric: true})
-    console.log(dist)
+    var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {exact: true, unit: 'km'})
+    console.log(dist)           
+    // => 945.0861704953323
+
+    var dist = geodist({lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {format: true, unit: 'feet'})
+    console.log(dist)           
+    // => 3101650 feet
 
 ## Coordinate formats
 

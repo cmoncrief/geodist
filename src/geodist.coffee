@@ -2,8 +2,14 @@
 # Copyright (c) 2013 Charles Moncrief <cmoncrief@gmail.com>
 # MIT Licensed
 
-RADIUS_MILES = 3960
-RADIUS_KM    = 6371
+radiusUnits = 
+  'feet': 20908800
+  'yards': 6969600
+  'miles': 3960
+  'mi': 3960
+  'kilometers': 6371
+  'km': 6371
+  'meters': 6371000
 
 # Returns the distance between two points. Takes two points in varying
 # formats and an options hash.
@@ -13,7 +19,7 @@ getDistance = (start, end, options = {}) ->
   [lat1, lon1] = parseCoordinates start
   [lat2, lon2] = parseCoordinates end
  
-  earthRadius = if options.metric then RADIUS_KM else RADIUS_MILES
+  earthRadius = getEarthRadius(options.unit)
 
   latDelta = (lat2 - lat1) * Math.PI / 180
   lonDelta = (lon2 - lon1) * Math.PI / 180
@@ -30,8 +36,7 @@ getDistance = (start, end, options = {}) ->
   distance = earthRadius * c
   distance = Math.floor(distance) unless options.exact
 
-  if options.format
-    distance = "#{distance} " + if options.metric then "kilometers" else "miles"
+  distance = "#{distance} #{options.unit || 'miles'}" if options.format
 
   return distance
 
@@ -52,6 +57,14 @@ parseCoordinates = (point = [0,0]) ->
     coords = point
 
   return coords
+
+# Returns the radius of the earth in the specfied units.
+
+getEarthRadius = (unit = "miles") ->
+
+  unit = unit.toLowerCase()
+  unit = "miles" unless radiusUnits[unit]
+  radiusUnits[unit]
 
 # Expose the getDistance function
 
