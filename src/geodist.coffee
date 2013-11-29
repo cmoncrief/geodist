@@ -50,7 +50,7 @@ parseCoordinates = (point = [0,0]) ->
 
   coords = []
 
-  if Array.isArray(point)
+  if point instanceof Array
     coords = point
   else if point.lat? and point.lon?
     coords = [point.lat, point.lon]
