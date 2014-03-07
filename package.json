@@ -1,6 +1,6 @@
 {
   "name": "geodist",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Charles Moncrief <cmoncrief@gmail.com>",
   "description": "Simple geographic distance calculator",
   "main": "lib/geodist.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmoncrief/geodist.git" 
+    "url": "https://github.com/cmoncrief/geodist.git"
   },
   "keywords": [
     "distance",
