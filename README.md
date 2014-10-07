@@ -1,5 +1,6 @@
-A fast and simple geographical distance calculator. This module calculates
-"as the crow flies" distance between two points using the [haversine formula](http://en.wikipedia.org/wiki/Haversine_formula).
+*This is a fork of [cmoncrief/geodist](https://github.com/cmoncrief/geodist)*
+
+A fast and simple geographical distance calculator. This module calculates "as the crow flies" distance between two points using the [haversine formula](http://en.wikipedia.org/wiki/Haversine_formula).
 
 ## Usage
 
