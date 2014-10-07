@@ -1,29 +1,44 @@
 {
   "name": "geodist",
-  "version": "0.2.1",
-  "author": "Charles Moncrief <cmoncrief@gmail.com>",
   "description": "Simple geographic distance calculator",
-  "main": "lib/geodist.js",
-  "scripts": {
-    "prepublish" : "cake build",
-    "test": "cake test"
+  "version": "1.0.0",
+  "author": {
+    "name": "Charles Moncrief",
+    "url": "https://github.com/cmoncrief/geodist"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cmoncrief/geodist.git"
-  },
-  "keywords": [
-    "distance",
-    "geo",
-    "haversine",
-    "coordinates",
-    "mileage"
+  "contributors": [
+    "Alexander Pope <alexander.pope@nrk.no>"
   ],
-  "author": "Charles Moncrief",
-  "license": "MIT",
-  "devDependencies": {
-    "mocha": "~1.7.4",
-    "coffee-script": "~1.4.0"
+  "dependencies": {
+    "number-utils": "git+ssh://git@github.com:yr/number-utils.git#0.2.1"
   },
-  "engines": { "node" : "*"}
+  "devDependencies": {
+    "buddy": "popeindustries/buddy#2.0.6-beta",
+    "expect.js": "0.3.1",
+    "mocha": "*",
+    "mocha-phantomjs": "*"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/yr/geodist.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "NODE_ENV=test mocha test/lib-test.js --reporter spec",
+    "test-client": "buddy build && mocha-phantomjs test/test-runner.html"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "buddy": {
+    "build": {
+      "js": {
+        "targets": [{
+          "input": "index.js",
+          "output": "test/lib.js",
+          "boilerplate": true,
+          "bootstrap": true
+        }]
+      }
+    }
+  }
 }

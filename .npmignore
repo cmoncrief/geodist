@@ -1,4 +1,3 @@
-node_modules
+.git*
+test/
 .DS_Store
-npm-debug.log
-src/
