@@ -1,7 +1,7 @@
 {
   "name": "geodist",
   "description": "Simple geographic distance calculator",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Charles Moncrief",
     "url": "https://github.com/cmoncrief/geodist"
