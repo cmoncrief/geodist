@@ -21,7 +21,6 @@
   "main": "index.js",
   "repository": "https://github.com/yr/geodist.git",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "test": "NODE_ENV=test mocha test/lib-test.js --reporter spec",
     "test-client": "buddy build && mocha-phantomjs test/test-runner.html"
