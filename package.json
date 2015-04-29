@@ -1,5 +1,5 @@
 {
-  "name": "geodist",
+  "name": "@yr/geodist",
   "description": "Simple geographic distance calculator",
   "version": "1.0.2",
   "author": {
@@ -10,10 +10,10 @@
     "Alexander Pope <alexander.pope@nrk.no>"
   ],
   "dependencies": {
-    "number-utils": "YR/number-utils#0.2.2"
+    "@yr/number-utils": "0.2.2"
   },
   "devDependencies": {
-    "buddy": "popeindustries/buddy#2.1.0-beta",
+    "buddy": "popeindustries/buddy",
     "expect.js": "0.3.1",
     "mocha": "*",
     "mocha-phantomjs": "*"

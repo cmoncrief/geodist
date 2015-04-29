@@ -1,14 +1,15 @@
-var round = require('number-utils').round
-	, geodist, expect;
+var round, geodist, expect;
 
 // Make it work in node..
 try {
 	geodist = require('../index.js');
 	expect = require('expect.js');
+	round = require('@yr/number-utils').round
 // .. or browser
 } catch (err) {
-	geodist = require('geodist');
+	geodist = require('geodist/index.js');
 	expect = window.expect;
+	round = require('@yr/number-utils#0.2.2').round;
 }
 
 describe('geodist', function () {

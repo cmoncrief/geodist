@@ -1,4 +1,4 @@
-var numberUtils = require('number-utils')
+var numberUtils = require('@yr/number-utils')
 
 	, RADIUS_UNITS = {
 			'feet': 20908800,
