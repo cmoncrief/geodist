@@ -10,7 +10,7 @@
     "Alexander Pope <alexander.pope@nrk.no>"
   ],
   "dependencies": {
-    "@yr/number-utils": "0.2.2"
+    "@yr/number-utils": "~0.2"
   },
   "devDependencies": {
     "buddy": "3.0.0-beta-6",
