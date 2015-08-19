@@ -7,9 +7,9 @@ try {
 	round = require('@yr/number-utils').round
 // .. or browser
 } catch (err) {
-	geodist = require('geodist/index.js');
+	geodist = require('index.js');
 	expect = window.expect;
-	round = require('@yr/number-utils#0.2.2').round;
+	round = require('@yr/number-utils/index.js#0.2.2').round;
 }
 
 describe('geodist', function () {

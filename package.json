@@ -13,10 +13,11 @@
     "@yr/number-utils": "0.2.2"
   },
   "devDependencies": {
-    "buddy": "popeindustries/buddy",
+    "buddy": "3.0.0-beta-6",
     "expect.js": "0.3.1",
     "mocha": "*",
-    "mocha-phantomjs": "*"
+    "mocha-phantomjs": "*",
+    "transfigure-babel": "5.8.22"
   },
   "main": "index.js",
   "repository": "https://github.com/yr/geodist.git",
@@ -28,16 +29,16 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "browser": {
+  },
   "buddy": {
     "build": {
-      "js": {
-        "targets": [{
-          "input": "index.js",
-          "output": "test/lib.js",
-          "boilerplate": true,
-          "bootstrap": true
-        }]
-      }
+      "targets": [{
+        "input": "index.js",
+        "output": "test/lib.js",
+        "boilerplate": true,
+        "bootstrap": true
+      }]
     }
   }
 }
