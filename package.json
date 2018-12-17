@@ -19,7 +19,6 @@
     "coordinates",
     "mileage"
   ],
-  "author": "Charles Moncrief",
   "license": "MIT",
   "devDependencies": {
     "mocha": "~1.7.4",
