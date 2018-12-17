@@ -1,6 +1,7 @@
 assert  = require 'assert'
 geodist = require '../lib/geodist'
 
+
 describe 'Distance', ->
 
   it 'should calculate miles between Chicago and Atlanta', ->
@@ -19,6 +20,7 @@ describe 'Distance', ->
     dist = geodist {lat: 48.8742, lon: 2.3470}, {lat: 52.5233, lon: 13.4127}
     assert.equal dist, 545
 
+
 describe 'Limits', ->
 
   it 'should return false if the limit is exceeded', ->
@@ -28,6 +30,7 @@ describe 'Limits', ->
   it 'should return true if the limit is not exceeded', ->
     dist = geodist {lat: 35.6833, lon: 139.7667}, {lat: 34.6603, lon: 135.5232}, {limit: 250}
     assert.equal dist, true
+
 
 describe 'Units', ->
 
@@ -63,8 +66,9 @@ describe 'Units', ->
     dist = geodist {lat: 37.8833, lon: 4.7833}, {lat: -37.7833, lon: 175.2833}, {unit: 'invalid'}
     assert.equal dist, 11922
 
+
 describe 'Coordinate formats', ->
-    
+
   it 'should support explicit lat/lon coordinate hashes', ->
     dist = geodist {lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}
     assert.equal dist, 587
@@ -81,6 +85,7 @@ describe 'Coordinate formats', ->
     dist = geodist {x: 41.85, y: -87.65}, [33.7489, -84.3881]
     assert.equal dist, 587
 
+
 describe 'Output options', ->
 
   it 'should output whole numbers by default', ->
@@ -89,7 +94,7 @@ describe 'Output options', ->
 
   it 'should output decimals when exact option is set', ->
     dist = geodist {lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {exact: true}
-    assert.equal dist, 587.4338777525531
+    assert.equal dist, 587.433877752553
 
   it 'should output miles string when format option is set', ->
     dist = geodist {lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {format: true}
@@ -114,6 +119,7 @@ describe 'Output options', ->
   it 'should output kilometers string when format and kilometers unit is set', ->
     dist = geodist {lat: 41.85, lon: -87.65}, {lat: 33.7489, lon: -84.3881}, {format: true, unit: 'kilometers'}
     assert.equal dist, '945 kilometers'
+
 
 describe 'Benchmark', ->
 
