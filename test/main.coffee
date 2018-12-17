@@ -31,6 +31,10 @@ describe 'Limits', ->
     dist = geodist {lat: 35.6833, lon: 139.7667}, {lat: 34.6603, lon: 135.5232}, {limit: 250}
     assert.equal dist, true
 
+  it 'should return true if the limit is equal the distance', ->
+    dist = geodist {lat: 35.6833, lon: 139.7667}, {lat: 35.6833, lon: 139.7667}, {limit: 0}
+    assert.equal dist, true
+
 
 describe 'Units', ->
 
