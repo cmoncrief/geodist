@@ -1,0 +1,12 @@
+{
+  "chicago"     : { "lat": 41.85,    "lon": -87.65 },
+  "atlanta"     : { "lat": 33.7489,  "lon": -84.3881 },
+  "losAngeles"  : { "lat": 34.0522,  "lon": -118.2428 },
+  "sanFrancisco": { "lat": 37.7750,  "lon": -122.4183 },
+  "tokyo"       : { "lat": 35.6833,  "lon": 139.7667 },
+  "osaka"       : { "lat": 34.6603,  "lon": 135.5232 },
+  "paris"       : { "lat": 48.8742,  "lon": 2.3470 },
+  "berlin"      : { "lat": 52.5233,  "lon": 13.4127 },
+  "cordoba"     : { "lat": 37.8833,  "lon": 4.7833 },
+  "hamilton"    : { "lat": -37.7833, "lon": 175.2833 }
+}
