@@ -41,35 +41,35 @@ describe 'Units', ->
 
   it 'should calculate miles between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'miles'}
-    assert.equal dist, 11922
+    assert.equal dist, 12432
 
   it 'should calculate mi between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'mi'}
-    assert.equal dist, 11922
+    assert.equal dist, 12432
 
   it 'should calculate yards between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'yards'}
-    assert.equal dist, 20983263
+    assert.equal dist, 21881899
 
   it 'should calculate feet between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'feet'}
-    assert.equal dist, 62949789
+    assert.equal dist, 65645699
 
   it 'should calculate km between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'km'}
-    assert.equal dist, 19181
+    assert.equal dist, 20002
 
   it 'should calculate kilometers between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'kilometers'}
-    assert.equal dist, 19181
+    assert.equal dist, 20002
 
   it 'should calculate meters between Cordoba and Hamilton', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'meters'}
-    assert.equal dist, 19181067
+    assert.equal dist, 20002522
 
   it 'should calculate in miles when an invalid unit is set', ->
     dist = geodist coords.cordoba, coords.hamilton, {unit: 'invalid'}
-    assert.equal dist, 11922
+    assert.equal dist, 12432
 
 
 describe 'Coordinate formats', ->
